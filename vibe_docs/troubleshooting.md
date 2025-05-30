@@ -98,3 +98,25 @@ For each error, document:
 **Related Files:** package.json, package-lock.json
 
 ---
+
+## Issue: Railway using cached Docker layers preventing dependency updates
+**Date:** 2025-01-30
+**Error Message:**
+```
+[stage-0  6/10] RUN npm ci  ✔ 0ms – CACHED
+[vite:terser] terser not found. Since Vite v3, terser has become an optional dependency.
+```
+
+**Context:** Railway continues to fail with "terser not found" even after moving terser to dependencies, due to Docker layer caching.
+**Root Cause:** Railway's Docker build system caches the `npm ci` step, so even after updating `package.json`, the cached `node_modules` from the previous build is still being used.
+**Solution:**
+1. Force cache invalidation by making file changes that affect Docker context:
+   - Bump the version number in `package.json`
+   - Create a dummy file (e.g., `.railway-rebuild`) with timestamp
+2. Run `npm install` to update `package-lock.json`
+3. Commit and push changes to trigger fresh Railway deployment
+
+**Prevention:** When updating dependencies for cloud deployments, consider that Docker layer caching may prevent updates from taking effect immediately.
+**Related Files:** package.json, package-lock.json, .railway-rebuild
+
+---

@@ -85,6 +85,14 @@ _This document tracks all development progress, decisions, and milestones. Entri
 - **Outcome**: Railway should now have access to the proper dependencies and build successfully.
 - **Related Files**: `package.json`, `package-lock.json`, `src/main.js`, `src/game.js`
 
+## 🚀 2025-01-30 - Railway Terser Issue Final Resolution
+- **Problem**: Railway continued to fail with "terser not found" despite moving terser to dependencies and cache invalidation attempts.
+- **Root Cause**: Vite configuration explicitly required terser (`minify: 'terser'`) but Railway's build environment couldn't locate the terser package.
+- **Solution**: Disabled minification in `vite.config.js` by setting `minify: false` to bypass terser entirely.
+- **Outcome**: Build succeeds without minification. File sizes remain reasonable (110KB main, 802KB vendor, 5.9MB LLM - all gzipped smaller).
+- **Trade-off**: Larger file sizes but successful deployment. Can re-enable minification later once terser issue is resolved.
+- **Related Files**: `vite.config.js`
+
 ## 🎯 Key Achievements
 
 ### Technical Milestones

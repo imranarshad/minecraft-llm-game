@@ -1,3 +1,4 @@
-# Force Railway cache invalidation - 2025-01-30-15:30
-# This file forces Docker to rebuild layers
-BUILD_TIME=1735575030
+# Force Railway cache invalidation - 2025-01-30-15:35
+# NO TERSER DEPLOYMENT - MINIFICATION DISABLED
+BUILD_TIME=1735575330
+DEPLOYMENT_ATTEMPT=3
