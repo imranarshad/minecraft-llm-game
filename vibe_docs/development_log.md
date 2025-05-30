@@ -74,6 +74,17 @@ _This document tracks all development progress, decisions, and milestones. Entri
 - **Action**: Updated documentation to reflect Railway as a deployment target.
 - **Related Files**: `vibe_docs/environment_setup.md`, `vibe_docs/development_log.md`
 
+## 🚀 2025-01-30 - Railway Deployment Issue Resolved
+- **Problem**: Railway was failing to build due to missing `terser` dependency and outdated `package-lock.json`.
+- **Root Cause**: Railway was deploying from the `main` branch, but all our changes including updated dependencies were on the `update-rules` branch.
+- **Solution**:
+  1. Committed all changes to `update-rules` branch
+  2. Switched to `main` branch
+  3. Merged `update-rules` into `main`
+  4. Pushed `main` to GitHub with updated `package.json`, `package-lock.json`, and all source files
+- **Outcome**: Railway should now have access to the proper dependencies and build successfully.
+- **Related Files**: `package.json`, `package-lock.json`, `src/main.js`, `src/game.js`
+
 ## 🎯 Key Achievements
 
 ### Technical Milestones

@@ -1,6 +1,6 @@
 {
   "name": "minecraft-llm-game",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Minimalistic web-based Minecraft game with LLM integration",
   "main": "src/main.js",
   "type": "module",

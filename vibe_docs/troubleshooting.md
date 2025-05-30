@@ -76,3 +76,25 @@ For each error, document:
 **Related Files:** src/game.js, index.html, vibe_docs/troubleshooting.md
 
 ---
+
+## Issue: Railway deployment failing with "terser not found" despite terser being in devDependencies
+**Date:** 2025-01-30
+**Error Message:**
+```
+[vite:terser] terser not found. Since Vite v3, terser has become an optional dependency. You need to install it.
+```
+
+**Context:** Deploying to Railway platform where build process requires terser for minification.
+**Root Cause:** Railway runs `npm ci` in production mode, which skips `devDependencies`. But static site builds require build tools during the production build process.
+**Solution:**
+1. Move critical build dependencies from `devDependencies` to `dependencies`:
+   - `terser`: needed for minification during build
+   - `vite`: needed for the build process
+   - `marked`: used at runtime in the browser
+2. Run `npm install` to update `package-lock.json`
+3. Commit and push the updated `package.json` and `package-lock.json`
+
+**Prevention:** For static site deployments, consider whether build tools should be in `dependencies` rather than `devDependencies` if the platform builds in production mode.
+**Related Files:** package.json, package-lock.json
+
+---
