@@ -184,6 +184,7 @@ Build a minimalistic Minecraft-like game that:
 - ✅ **Exploration strategies**
 - ✅ **Advanced building techniques**
 - ✅ **Ore finding tips**
+- ✅ **Formatted markdown output**
 
 **Available at:** http://localhost:5173
 

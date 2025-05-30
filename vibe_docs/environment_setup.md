@@ -4,7 +4,7 @@
 - **LLM Integration**: WebLLM (browser-based LLM inference)
 - **Build Tool**: Vite (fast development server and bundling)
 - **Styling**: CSS3 + modern features
-- **Deployment**: Static hosting (can deploy to Netlify, Vercel, GitHub Pages)
+- **Deployment**: Static hosting (can deploy to Netlify, Vercel, GitHub Pages, Railway)
 
 ## Prerequisites
 - Node.js (18+ recommended)
@@ -22,7 +22,7 @@
 2. **Initialize project and install dependencies**
    ```bash
    npm init -y
-   npm install three @mlc-ai/web-llm
+   npm install three @mlc-ai/web-llm gh-pages terser
    npm install --save-dev vite
    ```
 

@@ -46,6 +46,34 @@ _This document tracks all development progress, decisions, and milestones. Entri
 - **Documented**: Complete setup and deployment instructions
 - **Planned**: Future enhancement roadmap
 
+## 🚀 2025-01-30 - Push to main branch
+- **Action**: Pushed current changes to the `main` branch on GitHub.
+- **Context**: Syncing local progress with the remote repository.
+
+## 🚀 2025-01-30 - Deployment Attempts and Interruptions
+- **Action**: Attempted to deploy the project to GitHub Pages using `npm run deploy` and `npx gh-pages -d dist`.
+- **Context**: The deployment process was interrupted multiple times as it was taking significant time, likely due to transferring large LLM model files.
+- **Outcome**: Deployment is not yet complete. The build step is successful, but the `gh-pages` push is being interrupted.
+- **Note**: The `terser` dependency issue was resolved during the first deployment attempt.
+
+## 🚀 2025-01-30 - Fixed AI Assistant Input Interference
+- **Action**: Modified `src/game.js` to disable game keyboard controls when the AI assistant input field is focused.
+- **Context**: Keyboard input was interfering with typing in the AI chat box.
+- **Outcome**: Typing in the AI input field now works correctly without triggering game actions.
+- **Related Files**: `src/game.js`, `index.html`, `vibe_docs/troubleshooting.md`
+
+## 🚀 2025-01-30 - Formatted AI Assistant Output (Markdown Rendering)
+- **Action**: Installed `marked` library and updated `src/main.js` to parse AI responses as markdown.
+- **Context**: AI responses were displayed as raw markdown text.
+- **Outcome**: AI responses are now formatted as HTML for better readability.
+- **Related Files**: `src/main.js`, `package.json`, `vibe_docs/development_log.md`
+
+## 🚀 2025-01-30 - Decision to Deploy on Railway
+- **Decision**: Choose Railway as the deployment platform for the web game.
+- **Context**: Exploring alternative easy deployment options for static web applications.
+- **Action**: Updated documentation to reflect Railway as a deployment target.
+- **Related Files**: `vibe_docs/environment_setup.md`, `vibe_docs/development_log.md`
+
 ## 🎯 Key Achievements
 
 ### Technical Milestones
@@ -54,6 +82,8 @@ _This document tracks all development progress, decisions, and milestones. Entri
 ✅ **AI Integration**: Browser-based LLM with building assistance
 ✅ **Modern UI**: Clean, responsive interface with loading states
 ✅ **World Generation**: Procedural terrain with basic structures
+✅ **Input Handling**: Prevented game controls from interfering with UI input fields.
+✅ **Formatted AI Output**: Implemented markdown rendering for AI responses.
 
 ### Architecture Decisions
 - **Modular Design**: Separate concerns for game, AI, and UI

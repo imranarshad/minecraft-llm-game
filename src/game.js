@@ -7,6 +7,7 @@ export class Game {
         this.renderer = null;
         this.canvas = null;
         this.crosshair = null;
+        this.aiInput = null;
 
         // Game state
         this.isRunning = false;
@@ -34,6 +35,7 @@ export class Game {
         this.keys = {};
         this.camera_rotation = { x: 0, y: 0, rotationSpeed: 0.05 }; // Keyboard-based rotation
         this.mouse = { x: 0, y: 0 }; // Mouse position for block targeting
+        this.inputFocused = false; // Flag to check if an input field is focused
 
         // Trackpad gesture support
         this.trackpad = {
@@ -98,6 +100,7 @@ export class Game {
     async init() {
         this.canvas = document.getElementById('gameCanvas');
         this.crosshair = document.getElementById('crosshair');
+        this.aiInput = document.getElementById('aiInput'); // Get AI input element
 
         // Initialize Three.js scene
         this.scene = new THREE.Scene();
@@ -152,29 +155,47 @@ export class Game {
     setupControls() {
         // Keyboard controls
         document.addEventListener('keydown', (e) => {
-            this.keys[e.code] = true;
+            // Only process game controls if an input field is NOT focused
+            if (!this.inputFocused) {
+                this.keys[e.code] = true;
 
-            // Handle specific action keys
-            if (e.code === 'Space') {
-                e.preventDefault(); // Prevent page scroll
-                this.jump();
-            }
+                // Handle specific action keys
+                if (e.code === 'Space') {
+                    e.preventDefault(); // Prevent page scroll
+                    this.jump();
+                }
 
-            // Block interaction keys
-            if (e.code === 'KeyM') {
-                e.preventDefault();
-                this.removeBlock();
-            }
+                // Block interaction keys
+                if (e.code === 'KeyM') {
+                    e.preventDefault();
+                    this.removeBlock();
+                }
 
-            if (e.code === 'KeyB') {
-                e.preventDefault();
-                this.placeBlock();
+                if (e.code === 'KeyB') {
+                    e.preventDefault();
+                    this.placeBlock();
+                }
             }
         });
 
         document.addEventListener('keyup', (e) => {
-            this.keys[e.code] = false;
+            // Only process game controls if an input field is NOT focused
+            if (!this.inputFocused) {
+                this.keys[e.code] = false;
+            }
         });
+
+        // Add focus/blur listeners to AI input to manage game controls
+        if (this.aiInput) {
+            this.aiInput.addEventListener('focus', () => {
+                this.inputFocused = true;
+                console.log('AI input focused, game controls disabled.');
+            });
+            this.aiInput.addEventListener('blur', () => {
+                this.inputFocused = false;
+                console.log('AI input blurred, game controls enabled.');
+            });
+        }
 
         // Mouse tracking for block targeting
         this.canvas.addEventListener('mousemove', (e) => {

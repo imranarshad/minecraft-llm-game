@@ -1,5 +1,6 @@
 import { Game } from './game.js';
 import { LLMAssistant } from './llm.js';
+import { marked } from 'marked';
 
 class MinecraftLLM {
     constructor() {
@@ -147,8 +148,11 @@ class MinecraftLLM {
             // Get response from AI
             const response = await this.llm.askQuestion(question);
 
-            // Display response
-            this.aiResponse.textContent = response;
+            // Parse markdown response to HTML
+            const formattedResponse = marked.parse(response);
+
+            // Display response as HTML
+            this.aiResponse.innerHTML = formattedResponse;
             this.aiResponse.classList.remove('thinking');
 
         } catch (error) {
