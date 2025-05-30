@@ -120,3 +120,23 @@ For each error, document:
 **Related Files:** package.json, package-lock.json, .railway-rebuild
 
 ---
+
+## Issue: Railway treating browser JavaScript as Node.js application
+**Date:** 2025-01-30
+**Error Message:**
+```
+ReferenceError: document is not defined
+at file:///app/src/main.js:169:1
+```
+
+**Context:** Railway successfully builds the project but fails to start because it's trying to execute browser JavaScript with `node src/main.js`.
+**Root Cause:** Railway/Nixpacks automatically detects this as a Node.js application and tries to run the main entry point with Node.js, but `src/main.js` contains browser-specific code that uses `document` and DOM APIs.
+**Solution:**
+1. Add a proper start script in `package.json`: `"start": "vite preview --host 0.0.0.0 --port $PORT"`
+2. Create `railway.toml` configuration file to specify deployment settings
+3. Configure Railway to serve static files instead of executing browser JavaScript
+
+**Prevention:** For static web applications, ensure the deployment platform is configured to serve built files rather than execute source code.
+**Related Files:** package.json, railway.toml, .railway-rebuild
+
+---

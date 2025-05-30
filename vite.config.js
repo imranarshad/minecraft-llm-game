@@ -22,6 +22,11 @@ export default defineConfig({
     port: 5173,
     host: true
   },
+  preview: {
+    host: true,
+    port: 8080,
+    allowedHosts: ['healthcheck.railway.app']
+  },
   optimizeDeps: {
     include: ['three', '@mlc-ai/web-llm', 'marked']
   }
