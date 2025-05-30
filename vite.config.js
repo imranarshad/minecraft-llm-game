@@ -24,7 +24,12 @@ export default defineConfig({
   },
   preview: {
     host: true,
-    allowedHosts: ['healthcheck.railway.app']
+    allowedHosts: [
+      'healthcheck.railway.app',
+      'minecraft-llm-game-production.up.railway.app',
+      '.railway.app',
+      '.up.railway.app'
+    ]
   },
   optimizeDeps: {
     include: ['three', '@mlc-ai/web-llm', 'marked']
