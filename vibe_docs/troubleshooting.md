@@ -140,3 +140,23 @@ at file:///app/src/main.js:169:1
 **Related Files:** package.json, railway.toml, .railway-rebuild
 
 ---
+
+## Issue: Railway health checks blocked by Vite preview allowedHosts
+**Date:** 2025-01-30
+**Error Message:**
+```
+Blocked request. This host ("healthcheck.railway.app") is not allowed.
+To allow this host, add "healthcheck.railway.app" to `preview.allowedHosts` in vite.config.js.
+```
+
+**Context:** Railway deployment starts successfully but health checks fail repeatedly, preventing the service from becoming fully available.
+**Root Cause:** Vite's preview server blocks requests from unknown hosts for security. Railway's health check system uses "healthcheck.railway.app" as the host, which isn't in the default allowlist.
+**Solution:**
+1. Add `preview` configuration to `vite.config.js`
+2. Include `allowedHosts: ['healthcheck.railway.app']` in the preview settings
+3. Deploy the updated configuration
+
+**Prevention:** When using Vite preview server for production deployments, ensure all necessary health check and monitoring hosts are in the allowedHosts list.
+**Related Files:** vite.config.js, .railway-rebuild
+
+---
