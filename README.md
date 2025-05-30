@@ -1,154 +1,137 @@
-# 🎯 Vibe Coding Template
+# 🎮 Minecraft LLM - AI-Powered Block Building Game
 
-## What is Vibe Coding?
+A minimalistic Minecraft-like game that runs entirely in your web browser, featuring an integrated AI assistant powered by Large Language Models. Build, explore, and get creative with help from your AI companion!
 
-Vibe Coding is a systematic approach to software development designed specifically for working with LLMs (Large Language Models). It addresses the key challenge of LLMs: limited context windows and lack of persistent memory between sessions.
+![Game Status](https://img.shields.io/badge/Status-Playable-brightgreen)
+![Tech Stack](https://img.shields.io/badge/Tech-Three.js%20%2B%20WebLLM-blue)
+![License](https://img.shields.io/badge/License-ISC-yellow)
+
+## ✨ Features
+
+### 🎯 Core Gameplay
+- **3D Voxel World**: Fully 3D block-based world with realistic lighting and shadows
+- **Keyboard Controls**: Classic WASD movement with arrow key camera rotation
+- **Block Building**: Place and remove blocks to create your own structures
+- **Multiple Block Types**: Grass, Stone, Wood, and Sand blocks with distinct colors
+- **Procedural World**: Auto-generated world with terrain and simple tree structures
+
+### 🤖 AI Integration
+- **Smart Building Assistant**: Powered by WebLLM (Llama model) running entirely in browser
+- **Creative Guidance**: Get tips on building castles, houses, bridges, and more
+- **No Server Required**: AI runs locally in your browser for privacy
+- **Building Tips**: Ask questions like "How do I build a castle?" or "What blocks work well together?"
+
+### 🎨 Modern UI
+- **Clean Interface**: Modern, minimalist design with glass morphism effects
+- **Real-time Loading**: Visual progress bar for 3D world and AI model loading
+- **Responsive Controls**: Block type selector and AI chat panel
+- **Keyboard-Focused**: Easy-to-use keyboard controls for all interactions
 
 ## 🚀 Quick Start
 
-1. **Copy this template folder** to your new project directory
-2. **Open the project in Cursor** (or your preferred LLM-powered editor)
-3. **Let the LLM read `.cursorrules`** first
-4. **Start the discovery process** by having the LLM read `task_on_hand.md`
-5. **Answer the questions** posed by the LLM
-6. **Watch the documentation evolve** as your project takes shape
+### Prerequisites
+- Node.js 18+ and npm
+- Modern browser with WebGL support (Chrome, Firefox, Safari, Edge)
+- Good internet connection for initial AI model download (~1-2GB, cached after first use)
 
-## 📁 Template Contents
+### Installation & Running
 
-### `.cursorrules`
+```bash
+# Clone or download the project
+cd minecraft
 
-The algorithm that tells the LLM how to use all other documents:
+# Install dependencies
+npm install
 
-- Step-by-step instructions for reading documents
-- Rules for updating each document type
-- The discovery and development workflow
-- Critical rules to prevent context loss
+# Start development server
+npm run dev
 
-### `task_on_hand.md`
-
-The main working document for discovery and progress:
-
-- Current task and status
-- Open questions to ask
-- Progress tracking with checkboxes
-- Immediate next steps
-
-### `project_context.md`
-
-Empty template for business/product information:
-
-- Project overview and vision
-- Users and stakeholders
-- Business requirements
-- External dependencies
-
-### `technical_details.md`
-
-Empty template for technical decisions:
-
-- Technology stack choices
-- Architecture decisions
-- Security approach
-- Development setup
-
-### `development_log.md`
-
-Empty template for append-only progress log:
-
-- Timestamped entries
-- Decisions and rationale
-- Changes and their impact
-- Never modified, only appended
-
-## 🔄 The Process
-
-### 1. Discovery Phase
-
-The LLM will ask you questions about:
-
-- Project goals and objectives
-- Technical requirements
-- Constraints and preferences
-- Success criteria
-
-### 2. Documentation Evolution
-
-As you answer questions:
-
-- `task_on_hand.md` gets updated with specifics
-- `project_context.md` is created with permanent info
-- Technical decisions are documented
-
-### 3. Development Phase
-
-Once understanding is complete:
-
-- Clear implementation plan emerges
-- Progress is tracked with checkboxes
-- Each session builds on previous work
-
-## 💡 Key Benefits
-
-1. **No Context Loss** - Everything is documented
-2. **Seamless Handoffs** - Any LLM can continue the work
-3. **Clear Progress** - Always know what's been done
-4. **Systematic Approach** - No important details missed
-5. **Self-Improving** - Documentation evolves with understanding
-
-## 🎯 Best Practices
-
-1. **Always start by reading `.cursorrules`**
-2. **Update documentation immediately** after decisions
-3. **Use checkboxes** for progress tracking
-4. **Ask questions** when uncertain
-5. **Document rationale** for decisions
-
-## 🚫 Common Mistakes
-
-1. **Jumping into coding** before understanding requirements
-2. **Not updating documentation** as you go
-3. **Assuming the LLM remembers** previous sessions
-4. **Skipping the question phase**
-5. **Not using checkboxes** for progress
-
-## 📝 Example Usage
-
-```
-You: "I want to build a task management app"
-
-LLM: *Reads .cursorrules and task_on_hand.md*
-"I see you want to build a task management app. Let me ask some clarifying questions:
-
-1. What is the main problem this task management app aims to solve?
-2. Who are the primary users (individuals, teams, enterprises)?
-3. What makes this different from existing solutions?
-..."
-
-You: *Answers questions*
-
-LLM: *Updates task_on_hand.md with your answers and asks follow-up questions*
+# Open browser to http://localhost:5173
 ```
 
-## 🔧 Customization
+### First Time Setup
+1. Wait for the loading screen to complete (3D world + AI model download)
+2. Click anywhere in the game area to enable controls
+3. Start building and ask the AI for help!
 
-Feel free to:
+## 🎮 How to Play
 
-- Add more template documents
-- Modify the question categories
-- Adjust the process to your workflow
-- Add project-specific sections
+### Controls
+- **WASD** - Move around
+- **Mouse** - Look around (click game area first to enable)
+- **Left Click** - Remove blocks
+- **Right Click** - Place blocks
+- **Space** - Jump
+- **Shift** - Run faster
 
-The key is maintaining the core principle: **Document everything for context preservation**.
+### Block Types
+- 🌱 **Grass** - Green blocks, great for nature builds
+- 🪨 **Stone** - Gray blocks, perfect for castles and foundations
+- 🌳 **Wood** - Brown blocks, ideal for houses and structures
+- 🏖️ **Sand** - Yellow blocks, for beaches and desert builds
 
-## 🤝 Contributing
+### AI Assistant
+- Type questions in the AI panel like:
+  - "How do I build a castle?"
+  - "What blocks work well with wood?"
+  - "Ideas for a modern house?"
+  - "How to make a bridge?"
+- Get creative building tips and guidance
+- AI responses are tailored for building and creativity
 
-If you develop improvements to the vibe coding system:
+## 🛠️ Technical Details
 
-1. Document what worked well
-2. Note what could be improved
-3. Share your enhanced templates
-4. Help evolve the methodology
+### Architecture
+- **Frontend**: Vanilla JavaScript with ES6 modules
+- **3D Engine**: Three.js for WebGL rendering
+- **AI Engine**: WebLLM for browser-based LLM inference
+- **Build Tool**: Vite for fast development and bundling
+- **Model**: Llama-3.2-1B optimized for browser performance
 
----
+### Performance
+- **Initial Load**: ~30-60 seconds (downloading AI model)
+- **Subsequent Loads**: ~5 seconds (cached)
+- **Frame Rate**: 60 FPS on modern hardware
+- **Memory Usage**: ~2-3GB for AI model + game world
 
-**Remember**: The goal is to create a sustainable development flow that works within LLM limitations while maximizing productivity and code quality.
+### Browser Compatibility
+- ✅ Chrome 80+
+- ✅ Firefox 75+
+- ✅ Safari 14+
+- ✅ Edge 80+
+- ❌ Internet Explorer (not supported)
+
+## 📁 Project Structure
+
+```
+minecraft/
+├── index.html          # Main HTML file
+├── style.css           # Game UI styles
+├── package.json        # Dependencies and scripts
+├── src/
+│   ├── main.js         # Game initialization and coordination
+│   ├── game.js         # Three.js 3D engine and game logic
+│   └── llm.js          # WebLLM AI assistant integration
+├── assets/             # Game assets (textures, etc.)
+├── vibe_docs/          # Development documentation
+└── README.md           # This file
+```
+
+## 🔧 Development
+
+### Adding New Block Types
+```javascript
+// In src/game.js, add to blockTypes object:
+this.blockTypes = {
+    // existing blocks...
+    newBlock: { color: 0xFF0000, name: 'New Block' }
+};
+```
+
+### Customizing AI Responses
+```javascript
+// In src/llm.js, modify systemPrompt or add to getCommonResponse()
+```
+
+### Performance Optimization
+- Reduce world size in `

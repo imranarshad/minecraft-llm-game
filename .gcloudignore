@@ -1,0 +1,27 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Development files
+src/
+vibe_docs/
+.env
+.env.local
+.env.*.local
+
+# IDE and system files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Version control
+.git/
+.gitignore
+
+# Build tools
+vite.config.js
+package-lock.json
+
+# Documentation
+README.md

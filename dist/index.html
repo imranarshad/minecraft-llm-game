@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft LLM - AI-Powered Block Building</title>
+  <script type="module" crossorigin src="/assets/index-DpnSfE9P.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-jflrTWIq.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <!-- Three.js canvas will be inserted here -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- UI Overlay -->
+        <div id="ui">
+            <!-- Crosshair -->
+            <div id="crosshair">+</div>
+
+            <!-- AI Assistant Panel -->
+            <div id="aiPanel" class="panel">
+                <h3>🤖 AI Building Assistant</h3>
+                <div id="aiStatus">Loading AI...</div>
+                <input type="text" id="aiInput" placeholder="Ask for building help..." disabled>
+                <button id="aiAsk" disabled>Ask AI</button>
+                <div id="aiResponse"></div>
+            </div>
+
+            <!-- Controls Info -->
+            <div id="controls" class="panel">
+                <h3>⌨️ Controls</h3>
+                <ul>
+                    <li><strong>WASD</strong> - Move around</li>
+                    <li><strong>Arrow Keys</strong> - Look around</li>
+                    <li><strong>Mouse</strong> - Point at blocks</li>
+                    <li><strong>Two-finger pan</strong> - Look around (trackpad)</li>
+                    <li><strong>B</strong> - Build (place block)</li>
+                    <li><strong>M</strong> - Mine (remove block)</li>
+                    <li><strong>Space</strong> - Jump</li>
+                    <li><strong>Shift</strong> - Run faster</li>
+                </ul>
+            </div>
+
+            <!-- Block Selector -->
+            <div id="blockSelector" class="panel">
+                <h3>🧱 Block Type</h3>
+                <div id="blockTypes">
+                    <div class="block-option active" data-type="grass">🌱 Grass</div>
+                    <div class="block-option" data-type="stone">🪨 Stone</div>
+                    <div class="block-option" data-type="wood">🌳 Wood</div>
+                    <div class="block-option" data-type="sand">🏖️ Sand</div>
+                    <div class="block-option" data-type="water">💧 Water</div>
+                    <div class="block-option" data-type="dirt">🟫 Dirt</div>
+                    <div class="block-option" data-type="coal">⚫ Coal</div>
+                    <div class="block-option" data-type="iron">⚪ Iron</div>
+                    <div class="block-option" data-type="gold">🟡 Gold</div>
+                    <div class="block-option" data-type="diamond">💎 Diamond</div>
+                    <div class="block-option" data-type="lava">🔥 Lava</div>
+                    <div class="block-option" data-type="ice">🧊 Ice</div>
+                    <div class="block-option" data-type="snow">❄️ Snow</div>
+                    <div class="block-option" data-type="leaves">🍃 Leaves</div>
+                    <div class="block-option" data-type="obsidian">⬛ Obsidian</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loadingScreen">
+            <div class="loading-content">
+                <h1>🎮 Minecraft LLM</h1>
+                <p>Loading 3D World and AI Assistant...</p>
+                <div class="loading-bar">
+                    <div class="loading-progress" id="loadingProgress"></div>
+                </div>
+                <div id="loadingText">Initializing...</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

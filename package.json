@@ -1,0 +1,33 @@
+{
+  "name": "minecraft-llm-game",
+  "version": "1.0.0",
+  "description": "Minimalistic web-based Minecraft game with LLM integration",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "minecraft",
+    "webgl",
+    "threejs",
+    "llm",
+    "ai",
+    "game"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mlc-ai/web-llm": "^0.2.79",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "vite": "^6.0.3"
+  }
+}
