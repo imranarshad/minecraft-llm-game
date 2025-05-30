@@ -2,9 +2,50 @@
 
 A minimalistic Minecraft-like game that runs entirely in your web browser, featuring an integrated AI assistant powered by Large Language Models. Build, explore, and get creative with help from your AI companion!
 
-![Game Status](https://img.shields.io/badge/Status-Playable-brightgreen)
+**🌟 [PLAY NOW - Live Demo](https://minecraft-llm-game-production.up.railway.app/minecraft-llm-game/) 🌟**
+
+![Game Status](https://img.shields.io/badge/Status-Live%20Demo%20Available-brightgreen)
 ![Tech Stack](https://img.shields.io/badge/Tech-Three.js%20%2B%20WebLLM-blue)
+![Deployment](https://img.shields.io/badge/Deployed%20on-Railway-purple)
 ![License](https://img.shields.io/badge/License-ISC-yellow)
+
+## 🚀 Quick Start
+
+### 🌐 Play Online (Recommended)
+**Just visit**: [https://minecraft-llm-game-production.up.railway.app/minecraft-llm-game/](https://minecraft-llm-game-production.up.railway.app/minecraft-llm-game/)
+
+No installation needed! The game runs entirely in your browser with AI-powered assistance.
+
+### 💻 Local Development Setup
+
+#### Prerequisites
+- Node.js 18+ and npm
+- Modern browser with WebGL support (Chrome, Firefox, Safari, Edge)
+- Good internet connection for initial AI model download (~1-2GB, cached after first use)
+
+#### Installation & Running
+
+```bash
+# Clone or download the project
+cd minecraft
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Open browser to http://localhost:5173
+```
+
+#### Production Build & Deployment
+```bash
+# Build for production
+npm run build
+
+# Preview production build locally
+npm run preview
+```
 
 ## ✨ Features
 
@@ -26,33 +67,6 @@ A minimalistic Minecraft-like game that runs entirely in your web browser, featu
 - **Real-time Loading**: Visual progress bar for 3D world and AI model loading
 - **Responsive Controls**: Block type selector and AI chat panel
 - **Keyboard-Focused**: Easy-to-use keyboard controls for all interactions
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 18+ and npm
-- Modern browser with WebGL support (Chrome, Firefox, Safari, Edge)
-- Good internet connection for initial AI model download (~1-2GB, cached after first use)
-
-### Installation & Running
-
-```bash
-# Clone or download the project
-cd minecraft
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Open browser to http://localhost:5173
-```
-
-### First Time Setup
-1. Wait for the loading screen to complete (3D world + AI model download)
-2. Click anywhere in the game area to enable controls
-3. Start building and ask the AI for help!
 
 ## 🎮 How to Play
 
@@ -100,6 +114,32 @@ npm run dev
 - ✅ Safari 14+
 - ✅ Edge 80+
 - ❌ Internet Explorer (not supported)
+
+## 🌐 Deployment
+
+### Live Production
+- **Platform**: Railway (https://railway.app)
+- **URL**: https://minecraft-llm-game-production.up.railway.app/minecraft-llm-game/
+- **Status**: ✅ Live and fully functional
+- **Performance**: Global CDN with automatic scaling
+
+### Deploy Your Own Copy
+This project is configured for easy deployment on various platforms:
+
+#### Railway (Recommended)
+1. Fork this repository
+2. Connect to Railway
+3. Deploy automatically (takes ~5-10 minutes)
+
+#### Other Platforms
+- **Vercel**: `vercel --prod`
+- **Netlify**: Connect repository and build with `npm run build`
+- **GitHub Pages**: `npm run deploy` (configured)
+
+### Configuration Notes
+- Static site deployment (no server required)
+- AI model downloads directly in browser
+- All processing happens client-side for privacy
 
 ## 📁 Project Structure
 
